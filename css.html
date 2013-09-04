@@ -239,7 +239,7 @@ base_url: "../"
     <p>Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding <code>.col-xs-*</code> <code>.col-md-*</code> to your columns. See the example below for a better idea of how it all works.</p>
     <div class="bs-docs-grid">
       <div class="row show-grid">
-        <div class="col-xs-12 col-md-8">.col-xs-12 col-md-8</div>
+        <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
         <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
       </div>
       <div class="row show-grid">
@@ -255,7 +255,7 @@ base_url: "../"
 {% highlight html %}
 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 <div class="row">
-  <div class="col-xs-12 col-md-8">.col-xs-12 col-md-8</div>
+  <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
   <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
 </div>
 
@@ -2116,7 +2116,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <p>Buttons will appear pressed (with a darker background, darker border, and inset shadow) when active. For <code>&lt;button&gt;</code> elements, this is done via <code>:active</code>. For <code>&lt;a&gt;</code> elements, it's done with <code>.active</code>. However, you may use <code>.active</code> <code>&lt;button&gt;</code>s should you need to replicate the active state progammatically.</p>
 
     <h3>Button element</h3>
-    <p>No need to add <code>:active</code> as it's a pseudo state, but if you need it, go ahead and add <code>.active</code>.</p>
+    <p>No need to add <code>:active</code> as it's a pseudo-class, but if you need to force the same appearance, go ahead and add <code>.active</code>.</p>
     <p class="bs-example">
       <button type="button" class="btn btn-primary btn-lg active">Primary button</button>
       <button type="button" class="btn btn-default btn-lg active">Button</button>
