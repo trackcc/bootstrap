@@ -740,7 +740,7 @@ base_url: "../"
 {% endhighlight %}
 
     <h3>Emphasis classes</h3>
-    <p>Convey meaning through color with a handful of emphasis utility classes.</p>
+    <p>Convey meaning through color with a handful of emphasis utility classes. These may also be applied to links and will darken on hover just like our default link styles.</p>
     <div class="bs-example">
       <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
       <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -757,6 +757,10 @@ base_url: "../"
 <p class="text-warning">...</p>
 <p class="text-danger">...</p>
 {% endhighlight %}
+    <div class="bs-callout bs-callout-info">
+      <h4>Dealing with specificity</h4>
+      <p>Sometimes emphasis classes cannot be applied due to the specificity of another selector. In most cases, a sufficient workaround is to wrap your text in a <code>&lt;span&gt;</code> with the class.</p>
+    </div>
 
 
     <!-- Abbreviations -->
@@ -1581,19 +1585,19 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     <div class="bs-example">
       <form class="form-horizontal">
         <div class="form-group">
-          <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-          <div class="col-lg-10">
-            <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
           </div>
         </div>
         <div class="form-group">
-          <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-          <div class="col-lg-10">
-            <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+          <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
           </div>
         </div>
         <div class="form-group">
-          <div class="col-lg-offset-2 col-lg-10">
+          <div class="col-sm-offset-2 col-sm-10">
             <div class="checkbox">
               <label>
                 <input type="checkbox"> Remember me
@@ -1602,7 +1606,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
           </div>
         </div>
         <div class="form-group">
-          <div class="col-lg-offset-2 col-lg-10">
+          <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-default">Sign in</button>
           </div>
         </div>
@@ -1611,19 +1615,19 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight html %}
 <form class="form-horizontal" role="form">
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
-    <div class="col-lg-10">
-      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
-    <div class="col-lg-10">
-      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+    <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
     </div>
   </div>
   <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
+    <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <label>
           <input type="checkbox"> Remember me
@@ -1632,7 +1636,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
     </div>
   </div>
   <div class="form-group">
-    <div class="col-lg-offset-2 col-lg-10">
+    <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">Sign in</button>
     </div>
   </div>
@@ -2353,7 +2357,18 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 
     <h3 id="helper-classes-screen-readers">Screen reader content</h3>
-    <p>Hide an element to all users <em>except</em> screen readers with <code>.sr-only</code>. Necessary for following <a href="{{ page.base_url }}getting-started#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
+    <p>Hide an element everywhere, <strong>including screen readers</strong>, with <code>.hidden</code>. Can also be used as a mixin.</p>
+{% highlight html %}
+<div class="hidden"></div>
+{% endhighlight %}
+{% highlight css %}
+// Usage as a Mixin
+.example {
+  .hidden();
+}
+{% endhighlight %}
+
+    <p>Hide an element to all devices <strong>except screen readers</strong> with <code>.sr-only</code>. Necessary for following <a href="{{ page.base_url }}getting-started#accessibility">accessibility best practices</a>. Can also be used as a mixin.</p>
 {% highlight html %}
 <a class="sr-only" href="#content">Skip to content</a>
 {% endhighlight %}
